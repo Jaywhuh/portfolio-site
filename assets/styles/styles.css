@@ -6,7 +6,7 @@
   --secondary-color: #555;
   --accent-color: #26f57c;
   --text-color: #ffffff;
-  --text-dark: #333;
+  --text-dark: #000000;
   --background-color: #1a1a1a;
   --nav-background: rgba(33, 35, 33, 0.95);
 
@@ -22,6 +22,10 @@
   --transition-speed: 0.3s;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -34,6 +38,8 @@ body {
   background-color: var(--background-color);
   line-height: 1.6;
 }
+
+/* ------- Navigation bar ------- */
 
 header {
   /* Fixed positioning keeps navbar at top while scrolling */
@@ -49,7 +55,7 @@ header {
 
 nav {
   /* Container constrains width on large screens */
-  max-width: 1440px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: var(--spacing-sm) var(--spacing-md);
 }
@@ -96,14 +102,60 @@ nav a:hover::after {
   left: 0;
 }
 
-main {
-  margin-top: 10rem;
+/* ------- Scroll Behavior for navbar ------- */
+section {
+    scroll-margin-top: 5rem; 
 }
+
+
+/* ------- Home Section ------- */
+.home {
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: 1280px;
+    margin: 10rem auto;
+}
+
+.home h3 {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-normal);
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.home strong {
+    color: var(--accent-color);
+}
+
+.home h1 {
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color);
+}
+
+/* ------- About Section ------- */
+.about {
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: 1280px;
+    margin: 15rem auto;
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.about p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
 
 /* ------- Skills Section ------- */
 .skills {
-    padding: var(--spacing-lg) var(--spacing-sm);
-    max-width: 1440px;
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: 1280px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap; 
@@ -129,7 +181,6 @@ main {
     transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
 }
 
-/* NEW: Hover state styling */
 .skill-container:hover {
     transform: translateY(-5px) scale(1.03);
     box-shadow: 0 8px 20px rgba(38, 245, 124, 0.2);
@@ -142,4 +193,191 @@ main {
 
 .list {
     padding-left: 1.5rem;
+}
+
+/* ------- Projects Section ------- */
+
+.projects {
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 1.5rem;
+}
+
+.projects h1 {
+    text-align: left;
+    margin-bottom: var(--spacing-md);
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    flex-basis: 100%;  
+}
+
+.project-container {
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    /* 50% of parent's width - half of the flex gap(1.5rem) */
+    flex: 0 1 calc(50% - 0.75rem);
+    min-width: 300px;
+
+    display: flex;
+    flex-direction: column;  /* Need this to align link buttons */
+    align-items: center;
+
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+.project-container h3 {
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-container img {
+    width: 100%;
+    height: 250px;
+    border-radius: 4px;
+    margin-bottom: var(--spacing-sm);
+    object-fit: cover;
+
+}
+
+.project-description {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-container:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(38, 245, 124, 0.2);
+    cursor: pointer;
+}
+
+.project-link {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-md);
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+
+    margin-top: auto;
+}
+
+.project-link:hover {
+    background-color: #1fd966;
+    transform: translateY(-2px);
+}
+
+/* ------- Contact Section ------- */
+.contact-me {
+    padding: var(--spacing-lg) var(--spacing-md);
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.contact-me h1 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.contact-me h4 {
+    font-size: 1.5rem;
+    font-weight: var(--font-weight-normal);
+    margin-bottom: var(--spacing-xs);
+}
+
+.contact-me p {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-info {
+    display: flex;
+    justify-content: left;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+.contact-item a {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.contact-item a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: left;
+    gap: var(--spacing-sm);
+}
+
+.social-link {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-sm);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    font-weight: var(--font-weight-bold);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+}
+
+@media (max-width: 767px) {
+
+    /* --- Skills --- */
+    .skills {
+        padding: var(--spacing-md) var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    .skills h1 {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .skill-container {
+        flex: 1 1 100%;  /* Force full width */
+        min-width: 0;    /* Remove min-width constraint */
+        padding: var(--spacing-sm);
+    }
+
+    .skill-container h3 {
+        font-size: 1.25rem;
+    }
+
+    .projects {
+        padding: var(--spacing-md) var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+
+    /* --- Projects --- */
+
+    .projects h1 {
+        font-size: 2rem;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .project-container {
+        flex: 1 1 100%;  /* Force full width */
+        min-width: 0;    /* Remove min-width constraint */
+        padding: var(--spacing-sm);
+    }
+
+    .project-container h3 {
+        font-size: 1.25rem;
+    }
+
+    .project-container img {
+        height: 200px;   
+    }
 }
