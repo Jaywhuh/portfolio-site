@@ -8,15 +8,23 @@
     <link rel="stylesheet" href="assets/styles/styles.css">
 </head>
 <body>
+    <script src="assets/scripts/script.js" defer></script>
     <header>
         <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
+            <a href="#" class="nav-branding">Portfolio</a>
+
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact-me">Contact Me</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
 
@@ -28,14 +36,20 @@
         </section>
         <!-- About me -->
         <section class="about" id="about">
-            <h1>About Me</h1>
-            <p>
-                I am a Software Developer and Computer Engineer 
-                passionate about application development, ML/AI and finding new tech ideas.   
-                Recently graduated from UC San Diego, 
-                I enjoy solving real-world problems through code.
-            </p>
-            
+            <figure class="about-image">
+                <img src="assets/images/profile.jpg" 
+                    alt="Profile picture of Jinwoong Huh" 
+                    loading="lazy">
+            </figure>
+            <div class="about-content">
+                <h1>About Me</h1>
+                <p>
+                    I am a Software Developer and Computer Engineer 
+                    passionate about application development, ML/AI and finding new tech ideas.   
+                    Recently graduated from UC San Diego, 
+                    I enjoy solving real-world problems through code.
+                </p>
+            </div>
         </section>
         <!-- List of skills -->
          <section class="skills" id="skills">
